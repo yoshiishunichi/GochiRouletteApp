@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elb-Tp-Nf2">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="8Kc-7P-LSq">
+            <objects>
+                <navigationController id="elb-Tp-Nf2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="euk-5B-RD7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mj6-1u-Lzq" kind="relationship" relationship="rootViewController" id="HJH-gP-DaX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="whx-LE-2lM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1650" y="49"/>
+        </scene>
+        <!--Number View Controller-->
+        <scene sceneID="rjq-zJ-BZc">
+            <objects>
+                <viewController storyboardIdentifier="NumberViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mj6-1u-Lzq" customClass="NumberViewController" customModule="GochiRouletApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Knk-VL-hXH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="人数を入力(2桁)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-GZ-qem" customClass="CustomUITextField" customModule="GochiRouletApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="82" width="335" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="returnEndTextField:" destination="Mj6-1u-Lzq" eventType="editingDidEndOnExit" id="7vg-xU-gb6"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A35-yg-kqm">
+                                <rect key="frame" x="20" y="64" width="335" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkm-2B-7fl">
+                                <rect key="frame" x="40" y="577" width="295" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="次へ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedNextButton:" destination="Mj6-1u-Lzq" eventType="touchUpInside" id="q8O-z2-Gvg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ou4-GZ-qem" firstAttribute="leading" secondItem="aa4-9w-R9c" secondAttribute="leading" constant="20" id="8ro-tE-8Iw"/>
+                            <constraint firstItem="aa4-9w-R9c" firstAttribute="bottom" secondItem="Jkm-2B-7fl" secondAttribute="bottom" constant="60" id="Baf-Fq-YKC"/>
+                            <constraint firstItem="ou4-GZ-qem" firstAttribute="centerX" secondItem="Knk-VL-hXH" secondAttribute="centerX" id="JF9-no-EUX"/>
+                            <constraint firstItem="aa4-9w-R9c" firstAttribute="trailing" secondItem="A35-yg-kqm" secondAttribute="trailing" constant="20" id="Xss-8C-Qzn"/>
+                            <constraint firstItem="Jkm-2B-7fl" firstAttribute="leading" secondItem="aa4-9w-R9c" secondAttribute="leading" constant="40" id="nou-GT-Xl9"/>
+                            <constraint firstItem="aa4-9w-R9c" firstAttribute="trailing" secondItem="Jkm-2B-7fl" secondAttribute="trailing" constant="40" id="ptV-kl-U1I"/>
+                            <constraint firstItem="A35-yg-kqm" firstAttribute="top" secondItem="aa4-9w-R9c" secondAttribute="top" constant="20" id="q4z-GN-Cz7"/>
+                            <constraint firstItem="Jkm-2B-7fl" firstAttribute="centerX" secondItem="Knk-VL-hXH" secondAttribute="centerX" id="u1n-ei-8DZ"/>
+                            <constraint firstItem="ou4-GZ-qem" firstAttribute="top" secondItem="A35-yg-kqm" secondAttribute="bottom" constant="2" id="u2G-4B-U63"/>
+                            <constraint firstItem="A35-yg-kqm" firstAttribute="centerX" secondItem="Knk-VL-hXH" secondAttribute="centerX" id="uao-op-lKi"/>
+                            <constraint firstItem="aa4-9w-R9c" firstAttribute="trailing" secondItem="ou4-GZ-qem" secondAttribute="trailing" constant="20" id="waS-LC-MgA"/>
+                            <constraint firstItem="A35-yg-kqm" firstAttribute="leading" secondItem="aa4-9w-R9c" secondAttribute="leading" constant="20" id="x2R-2p-Vfs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aa4-9w-R9c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AnI-ZZ-VQu"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Jkm-2B-7fl" id="ND0-tU-OOJ"/>
+                        <outlet property="numberTextField" destination="ou4-GZ-qem" id="f66-Ea-AtS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYA-Bh-gQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-970" y="27"/>
+        </scene>
+    </scenes>
+</document>
